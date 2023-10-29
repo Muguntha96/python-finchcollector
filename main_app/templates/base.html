@@ -11,7 +11,7 @@
     href="{% static 'images/favicon.svg' %}"
   >
   <title>Finch Collector</title>
-  <link rel="stylesheet" type='text/css' href="{% static 'css/base.css'%}">
+  <link rel="stylesheet" type='text/css' href="{% static 'css/base.css' %}">
   {% block head %}
   {% endblock %}
 </head>
@@ -23,10 +23,11 @@
         src="{% static 'images/img5.svg' %}"
         alt="The Finch Collector Logo"
       >
-      </a>
+      </a> 
     </div>
     <nav>
       <ul>
+        <li><a href="/finches">All Finches</a></li>
         <li><a href="/about">About</a></li>
       </ul>
     </nav>
