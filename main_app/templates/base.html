@@ -1,15 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    rel="shortcut icon"
+    type="image/png"
+    href="{% static 'images/favicon.svg' %}"
+  >
   <title>Finch Collector</title>
-  {% block head %}{% endblock head %}
+  <link rel="stylesheet" type='text/css' href="{% static 'css/base.css'%}">
+  {% block head %}
+  {% endblock %}
 </head>
 <body>
   <header>
-    <div class ="header-logo-container">
-      <a href="/"></a>
+    <div class="header-logo-container">
+      <a href="/">
+        <img 
+        src="{% static 'images/img5.svg' %}"
+        alt="The Finch Collector Logo"
+      >
+      </a>
     </div>
     <nav>
       <ul>
@@ -18,8 +32,8 @@
     </nav>
   </header>
   <main>
-    {% block content %}{% endblock content %}
+    {% block content %}
+    {% endblock %}
   </main>
-  
 </body>
 </html>
