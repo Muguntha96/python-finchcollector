@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView,UpdateView
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from django.http import HttpResponse
 from .models import Finch
 # Create your views here.
@@ -28,4 +28,6 @@ class FinchUpdate(UpdateView):
   model = Finch
   fields = ['description','age']
   
-  
+class FinchDelete(DeleteView):
+  model = Finch
+  success_url = '/finches/'

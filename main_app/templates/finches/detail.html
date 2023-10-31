@@ -16,6 +16,10 @@
     {% endif %}
     <p><small>{{finch.description}}</small></p>
   </div>
-</section>
+  <div class="finch-actions">
+    <a href="{% url 'finch-update' finch.id %}" class='btn warn'>Edit Finch</a>
+    <a href="{% url 'finch-delete' finch.id %}" class='btn danger'>Delete Finch</a>
+  </div>
+  </section>
 {% endblock content %}
 
