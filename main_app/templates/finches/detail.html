@@ -7,6 +7,7 @@
 {% block content %}
 <section class="finch-container">
   <div class="finch-img">
+    <img src='{% static "images/img3.svg" %}' alt="image 3" />
     <h1>{{finch.name}}</h1>
     {% if finch.age > 0 %}
     <p>{{finch.name}} finch is {{finch.age}} year old {{finch.breed}}</p>

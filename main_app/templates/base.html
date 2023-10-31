@@ -18,17 +18,18 @@
 <body>
   <header>
     <div class="header-logo-container">
-      {% comment %} <a href="/">
+      <a href="/">
         <img 
         src="{% static 'images/img5.svg' %}"
         alt="The Finch Collector Logo"
-      > {% endcomment %}
+      > 
       </a> 
     </div> 
     <nav>
       <ul>
-        <li><a href="/finches">All Finches</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="{% url "finch-index" %}">All Finches</a></li>
+        <li><a href="{% url "about" %}">About</a></li>
+        <li><a href="{% url "finch-create" %}">Add Finch</a></li>
       </ul>
     </nav>
   </header>
