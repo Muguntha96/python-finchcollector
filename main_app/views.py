@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
-from .models import Finch
+from .models import FeedingFinch, Finch
 from .forms import FeedingForm
 # Create your views here.
 
@@ -18,8 +18,9 @@ def finch_index(request):
 def finch_detail(request,finch_id):
   finch = Finch.objects.get(id=finch_id)
   feeding_form = FeedingForm()
-  print(feeding_form)
-  return render(request,'finches/detail.html',{'finch': finch,'feeding_form':feeding_form})
+  feedings = FeedingFinch.objects.filter(finch = finch)
+  # feedings_count = Finch.feeding_set.all().count()
+  return render(request,'finches/detail.html',{'finch': finch,'feeding_form':feeding_form,'feedings':feedings})
 
 class FinchCreate(CreateView):
   model = Finch

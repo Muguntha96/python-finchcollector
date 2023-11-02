@@ -1,3 +1,4 @@
+from datetime import date
 from django.db import models
 from django.urls import reverse
 
@@ -21,6 +22,9 @@ class Finch(models.Model):
   
   def get_absolute_url(self):
       return reverse("finch-detail", kwargs={"finch_id": self.id})
+  
+  def fed_for_today(self):
+    return self.feeding_set.filter(date=date.today()).count()>=len(MEALS)-1
 
 class FeedingFinch(models.Model):
   date = models.DateField('Feeding Date')

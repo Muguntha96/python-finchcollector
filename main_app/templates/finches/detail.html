@@ -49,6 +49,8 @@
         <p>{{feeding_form.as_p}}</p>
         <button type="submit" class="btn submit">Add Feeding</button>
       </form>
+      <h3>Feeding Details</h3>
+      {% comment %} {% if finch.feeding_set.all.count%} {% endcomment %}
       <table>
         <thead>
           <tr>
@@ -57,42 +59,20 @@
           </tr>
         </thead>
         <tbody>
-          {{finch.feeding_set.all}}
-          {% for feeding in finch.feeding_set.all %}
-            <tr>
-                <td>{{feeding.get_meal_display}}</td>
-                <td>{{feeding.date}}</td>
-            </tr>
+          {% for feeding in feedings %}
+          <tr>
+            <td>{{feeding.get_meal_display}}</td>
+            <td>{{feeding.date}}</td>
+          </tr>
           {% endfor %}
         </tbody> 
       </table>
+      {% comment %} {% else %}
+        <div class="subsection-content">
+          <p>😔 Meal has never been given to {{finch.name}} 😔</p>
+        </div>
+      {% endif %} {% endcomment %}
     </section>
   </div>
 
 {% endblock content %} 
-
-{% comment %} <div class="feedings-toy-container">
-  <section class="feedings">
-    <div class="subsection-title">
-      <h2>Feedings</h2>
-      <img src="{% static "images/img2.svg" %}" alt="image-2">
-      <img src="{% static "images/img3.svg" %}" alt="image-3">
-      <img src="{% static "images/img4.svg" %}" alt="image-4">
-    </div>
-    <table>
-      <thead>
-        <tr><th>Date</th><th>Meal</th></tr>
-      </thead>
-      <tbody>
-        {% for feeding in finch.feeding_set.all %}
-          <tr>
-            <td>{{feeding.date}}</td>
-            <td>{{feeding.get_meal_display}}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </section>
-</div>
-
-{% endblock %} {% endcomment %}
