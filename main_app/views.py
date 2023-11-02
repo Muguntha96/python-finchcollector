@@ -55,3 +55,11 @@ class ToyDetail(DetailView):
 
 class ToyList(ListView):
   model = Toy
+
+class ToyUpdate(UpdateView):
+  model = Toy
+  fields = ['name','color']
+
+class ToyDelete(DeleteView):
+  model = Toy
+  success_url ='/toys/'
