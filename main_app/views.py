@@ -18,9 +18,10 @@ def finch_index(request):
 def finch_detail(request,finch_id):
   finch = Finch.objects.get(id=finch_id)
   feeding_form = FeedingForm()
-  feedings = FeedingFinch.objects.filter(finch = finch)
+  # feedings = FeedingFinch.objects.filter(finch = finch)
   # feedings_count = Finch.feeding_set.all().count()
-  return render(request,'finches/detail.html',{'finch': finch,'feeding_form':feeding_form,'feedings':feedings})
+  # 'feedings':feedings
+  return render(request,'finches/detail.html',{'finch': finch,'feeding_form':feeding_form})
 
 class FinchCreate(CreateView):
   model = Finch
