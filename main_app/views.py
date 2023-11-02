@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from django.views.generic import ListView, DetailView
 from .models import Finch,Toy
 from .forms import FeedingForm
 # Create your views here.
@@ -48,3 +49,9 @@ def add_feeding(request,finch_id):
 class ToyCreate(CreateView):
   model = Toy
   fields= '__all__'
+
+class ToyDetail(DetailView):
+  model = Toy
+
+class ToyList(ListView):
+  model = Toy
