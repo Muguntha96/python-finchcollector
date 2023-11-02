@@ -83,6 +83,54 @@
         </div>
       {% endif %}
     </section>
+    <section class="toys">
+      <div class="subsection-title">
+        <h2>Toys</h2>
+        <img src="images/img3.svg" alt="new image">
+      </div>
+      <h3>{{finch.name}} Toys</h3>
+      <div class="subsection-content">
+        {% if finch.toys.count %}
+          {% for toy in finch.toys.all  %}
+          <div class="toy-container">
+            <div 
+              class="color-block"
+              style="background-color: {{ toy.color }}"
+            ></div>
+            <a href="{% url 'toy-detail' toy.id %}">
+              <p>A {{ toy.color }} {{ toy.name }}</p>
+            </a>
+          </div>
+          {% endfor %}
+        {% else %}
+          <p class="no-toys">{{finch.name}} dosen't have any toys</p>
+        {% endif %}
+      </div>
+      <h3>Available Toys</h3>
+      <div class="subsection-content">
+        {% if toys.count %}
+        {% for toy in toys.all %}
+          <div class="toy-container">
+            <div 
+              class="color-block"
+              style="background-color: {{ toy.color }}"
+            ></div>
+            <a href="{% url 'toy-detail' toy.id %}">
+              <p>A {{ toy.color }} {{ toy.name }}</p>
+            </a>
+            <form action="{% url "assec-toy" finch.id toy.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn submit">Give toy</button>
+            </form>
+          </div>
+        {% endfor %}
+        {% else %}
+        <p class="all-toys">
+          {{finch.name}} already has all the available toys 🥳
+        </p>
+      {% endif %}
+      </div>
+    </section>
   </div>
 
 {% endblock content %} 

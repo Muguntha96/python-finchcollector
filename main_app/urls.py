@@ -14,5 +14,6 @@ urlpatterns = [
   path('toys/<int:pk>/',views.ToyDetail.as_view(),name='toy-detail'),
   path('toys/', views.ToyList.as_view(), name='toy-index'),
   path('toys/<int:pk>/update/',views.ToyUpdate.as_view(),name='toy-update'),
-  path('toys/<int:pk>/delete/',views.ToyDelete.as_view(),name='toy-delete')
+  path('toys/<int:pk>/delete/',views.ToyDelete.as_view(),name='toy-delete'),
+  path('finches/<int:finch_id>/assec-toy/<int:toy_id>/', views.assec_toy, name='assec-toy'),
   ] 
