@@ -52,7 +52,7 @@ class ToyCreate(CreateView):
 
 class ToyDetail(DetailView):
   model = Toy
-
+  
 class ToyList(ListView):
   model = Toy
 
