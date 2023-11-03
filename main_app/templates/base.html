@@ -33,10 +33,11 @@
           <li><a href="{% url "finch-create" %}">Add Finch</a></li>
           <li><a href="{% url "toy-create" %}">Add a Toy</a></li>
           <li><a href="{% url "about" %}">About</a></li>
-          <li><a href="{% url "home" %}">Log out</a></li>
+          <li><a href="{% url "logout" %}">Log out</a></li>
         {% else %}
           <li><a href="{% url "about" %}">About</a></li>
           <li><a href="{% url "home" %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
         {% endif %}
       </ul>
     </nav>
