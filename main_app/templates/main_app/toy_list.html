@@ -6,10 +6,11 @@
 {% endblock head %}
 
 {% block content %}
+<h1>All Finch Toys</h1>
 <section>
-  <h1>All Finch Toys</h1>
-  <img src="{% static "images/img1.svg" %}" alt="img-1">
-  <img src="{% static "images/img2.svg" %}" alt="img-2">
+  <img style="width:70px;height:110px" src="{% static "images/toys-1.svg" %}" alt="toys-1">
+  <img style="width:70px;height:110px" src="{% static "images/toys-3.svg" %}" alt="toys-3">
+  <img style="width:70px;height:110px" src="{% static "images/toys-4.svg" %}" alt="toys-4">
 </section>
 <section class="card-container">
   {% for toy in toy_list %}

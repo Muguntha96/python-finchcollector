@@ -39,9 +39,10 @@
     <section class ="feedings">
       <div class="subsection-title">
         <h2>Feeding</h2>
-        <img src="{% static "images/img2.svg" %}" alt="image-2">
-        <img src="{% static "images/img3.svg" %}" alt="image-3">
-        <img src="{% static "images/img4.svg" %}" alt="image-4">
+        <img src="{% static "images/finch-feeding-1.svg" %}" alt="feeding-1">
+        <img src="{% static "images/finch-feeding-2.svg" %}" alt="feeding-2">
+        <img src="{% static "images/finch-feeding-3.svg" %}" alt="feeding-3">
+        <img src="{% static "images/finch-feeding-4.svg" %}" alt="image-4">
       </div>
       <h3>Add a Feeding</h3>
       <form
@@ -50,11 +51,6 @@
         class="subsection-content" 
         autocomplete="off"
       >
-        {% comment %} {% if finch.fed_for_today %}
-          <p class="fed">{{finch.name}} has been fed maximum meals for today</p>
-        {% else %}
-          <p class="unfed">{{finch.name}} might be hungry</p>
-        {% endif %} {% endcomment %}
         {% csrf_token %}
         {{feeding_form.as_p}}
         <button type="submit">Add Feeding</button>
@@ -86,7 +82,9 @@
     <section class="toys">
       <div class="subsection-title">
         <h2>Toys</h2>
-        <img src="images/img3.svg" alt="new image">
+        <img style="width:70px;height:110px" src="{% static "images/toys-1.svg" %}" alt="toys-1">
+        <img style="width:70px;height:110px" src="{% static "images/feather.svg" %}" alt="feather">
+        <img style="width:70px;height:110px" src="{% static "images/ball.svg" %}" alt="ball">
       </div>
       <h3>{{finch.name}} Toys</h3>
       <div class="subsection-content">

@@ -6,10 +6,10 @@
 {% block content %}
 <section class="page-header">
 <h1>Finch List</h1>
-<img src='{% static "images/img1.svg" %}' alt="image 1" />
-<img src='{% static "images/img2.svg" %}' alt="image 2" />
-<img src='{% static "images/img3.svg" %}' alt="image 3" />
-<img src='{% static "images/img4.svg" %}' alt="image 4" />
+<img src='{% static "images/icon.svg" %}' alt="icon" />
+<img src='{% static "images/new-logo.svg" %}' alt="new-logo" />
+<img src='{% static "images/love-bird.svg" %}' alt="love-bird" />
+<img src='{% static "images/dove-solid.svg" %}' alt="bird" />
 
 </section>
 <section class="card-container">
@@ -18,7 +18,7 @@
     <a href="{% url 'finch-detail' finch.id %}">
       <div class="card-content">
         <div class="card-img-container">
-          <img src='{% static "images/img3.svg" %}' alt="image 3" />
+          <img src='{% static "images/img1.svg" %}' alt="image-1" />
         </div>
         <h2 class="card-title"{{ finch.name}}></h2>
         {% if finch.age > 0 %}

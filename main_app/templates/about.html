@@ -1,8 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 <h1>About the finch</h1>
 <hr/>
-<p class="page-content">
+<div class="img-container">
+  <img style="width:300px;height:300px;margin:5px" src="{% static "images/bird4.avif" %}" alt="bird-1"/>
+  <img style="width:300px;height:300px;margin:5px" src="{% static "images/bird5.avif" %}" alt="bird-1"/>
+  <img style="width:300px;height:300px;margin:5px" src="{% static "images/bird-3.avif" %}" alt="bird-1"/>
+  <img style="width:300px;height:300px;margin:5px" src="{% static "images/bird-2.avif" %}" alt="bird-1"/>
+  <img style="width:300px;height:300px;margin:5px" src="{% static "images/bird-1.avif" %}" alt="bird-1"/>
+</div>
+<p class="page-content" style="font-size:30px">
+  
   Finches are generally excellent singers. However, their songs can range from the complex and beautiful repertoires of the song sparrow (Melospiza melodia) to the monotonously unmusical notes of the grasshopper sparrow (Ammodramus savannarum). Many kinds of finches are kept as cage birds.
 </p>
+
 {% endblock %}
